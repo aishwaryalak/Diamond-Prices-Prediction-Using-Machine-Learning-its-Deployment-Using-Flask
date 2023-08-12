@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Diamond Price Prediction</h1>
+
+    <form action="{{url_for("predict")}}" method="post">
+        <input type="text" name="Carat" placeholder="Carat" required="required"/>
+        <input type="text" name="Depth" placeholder="Depth" required="required"/>
+        <input type="text" name="Table" placeholder="Table" required="required"/>
+        <input type="text" name="Size" placeholder="Size" required="required"/>
+        <p>Cut</p>
+        <select name="cut">
+            <option value=2>Ideal</option>
+            <option value=3>Premium</option>
+            <option value=4>Very Good</option>
+            <option value=1>Good</option>
+            <option value=1>Fair</option>
+        </select>
+        <br>
+        <br>
+        <p>Color</p>
+        <select name="color">
+            <option value=3>G</option>
+            <option value=1>E</option>
+            <option value=2>F</option>
+            <option value=4>H</option>
+            <option value=0>D</option>
+            <option value=5>I</option>
+            <option value=6>J</option>
+        </select>
+        <br>
+        <br>
+        <p>Clarity</p>
+        <select name="clarity">
+            <option value=2>SI1</option>
+            <option value=5>VS2</option>
+            <option value=4>VS1</option>
+            <option value=3>SI2</option>
+            <option value=7>VVS2</option>
+            <option value=6>VVS1</option>
+            <option value=1>IF</option>
+            <option value=0>I1</option>
+        </select>
+        <br>
+        <br>
+        <button type="submit">Predict</button>
+    </form>
+    <br>
+    <br>
+    {{predicted_text}}
+</body>
+</html>
